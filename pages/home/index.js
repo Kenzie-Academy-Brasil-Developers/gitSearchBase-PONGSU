@@ -16,6 +16,13 @@ bttnGet.addEventListener('click', () => {
     return getUser()
 })
 
+userToSearch.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
+        return getUser()
+    }
+});
+
 async function getUser() {
     await fetch(`${url}${userToSearch.value}`)
         .then(function (response) {
