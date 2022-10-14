@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/globalStyles.css" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Git Search</title>
-  </head>
-  <body>
-    <main></main>
-    <script src="index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../styles/globalStyles.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Git Search</title>
+  <script defer src="./index.js"></script>
+  <script defer src="./verifications.js"></script>
+  <script defer src="./recentUsers.js"></script>
+</head>
+
+<body>
+  <header>
+    <h2>Git Search</h2>
+    <h4>Encontre e se conecte com profissionais de forma rápida e fácil</h4>
+    <div id="recent">
+      <h5>Achados Recentemente:</h5>
+      <ul id="recent-list">
+      </ul>
+    </div>
+  </header>
+  <main>
+    <h3>Procurar por um usuário</h3>
+    <h6>Usuário github</h6>
+    <input id="user-input" required type="text" placeholder="Digite um usuário do github aqui...">
+    <button disabled id="bttn-get">Ver perfil do github</button>
+  </main>
+</body>
+
 </html>

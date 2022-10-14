@@ -1,1 +1,213 @@
-/* Desenvolva sua estilização aqui...*/
+body {
+    display: flex;
+    color: var(--color-grey-7);
+}
+
+header {
+    width: 50vw;
+    height: 100vh;
+    background-color: var(--color-brand-1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 35vh 10vw 0 10vw;
+}
+
+main {
+    width: 50vw;
+    height: 100vh;
+    background-color: var(--color-grey-2);
+    display: flex;
+    flex-direction: column;
+    padding: 35vh 10vw 0 10vw;
+}
+
+h2 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 150%;
+}
+
+h4 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 150%;
+}
+
+h5 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+#recent {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+#recent ul {
+    display: flex;
+    gap: 13px;
+}
+
+#recent ul li {
+    position: relative;
+    width: 44px;
+    height: 44px;
+    outline: 1px solid transparent;
+    border-radius: 50%;
+}
+
+#recent ul li:hover {
+    width: 44px;
+    height: 44px;
+    outline: 1px solid #FFFFFF;
+    border-radius: 50%;
+}
+
+#recent ul li img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+#link-recent-user {
+    position: absolute;
+    left: -47px;
+    top: 55px;
+    padding: 4px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFFF;
+    color: var(--color-grey-1);
+    border-radius: 4px;
+    width: 140px;
+    height: 26px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+}
+
+h3 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 57px;
+}
+
+h6 {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 13px;
+}
+
+input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    background-color: var(--color-grey-1);
+    border: 1px solid var(--color-grey-3);
+    border-radius: 4px;
+    margin-bottom: 13px;
+    width: 30vw;
+    height: 38px;
+    padding-left: 10px;
+    color: var(--color-grey-6);
+}
+
+button {
+    width: 30vw;
+    height: 38px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 150%;
+    background-color: var(--color-brand-2);
+    border-radius: 4px;
+    border: none;
+    color: var(--color-grey-7);
+    cursor: pointer;
+}
+
+button:disabled {
+    background: rgba(214, 51, 108, 0.4);
+    cursor: not-allowed;
+}
+
+button:hover {
+    background: var(--color-brand-1)
+}
+
+#alert-user {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #c22525;
+    margin-top: -7px;
+    margin-bottom: 13px;
+    padding-left: 1px;
+}
+
+@media(max-width:800px) {
+    body {
+        flex-direction: column;
+        /* justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px; */
+    }
+    header{
+        width: 100vw;
+        height: 60vh;
+        padding-top: 10vh;
+    }
+    main{
+        width: 100vw;
+        height: 60vh;
+        padding-top: 10vh;
+    }
+    h3{ 
+        margin-bottom: 37px;
+    }
+    input{        
+    width: 60vw;
+    min-width: 245px;
+    }
+    button{        
+    width: 60vw;
+    min-width: 245px;
+    }
+}
+
+
+@media(max-width:400px){
+    #recent{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 13px;
+    }
+    input{        
+    width: 80vw;
+    }
+    button{
+    width: 80vw;
+    }
+}
