@@ -19,6 +19,18 @@ function getRecentUsers() {
     }
 }
 
+function fillRecentUsers() {
+    if (recentUsers.length == 0) {
+        return null
+    } else {
+        recentUsers.map(user => {
+            recentList.insertAdjacentHTML('beforeend', `
+                <li class='recent-user'><img src="${user.avatar_url}" alt=""></li>
+            `)
+        })
+    }
+}
+
 function trackFormBttn() {
     bttnGet.addEventListener('click', () => {
         bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
@@ -61,15 +73,3 @@ async function getUser() {
             window.location.href = "../profile/index.html";
         })
 };
-
-function fillRecentUsers() {
-    if (recentUsers.length == 0) {
-        return null
-    } else {
-        recentUsers.map(user => {
-            recentList.insertAdjacentHTML('beforeend', `
-                <li class='recent-user'><img src="${user.avatar_url}" alt=""></li>
-            `)
-        })
-    }
-}
