@@ -174,40 +174,46 @@ button:hover {
         align-items: flex-start;
         gap: 20px; */
     }
-    header{
+
+    header {
         width: 100vw;
         height: 60vh;
         padding-top: 10vh;
     }
-    main{
+
+    main {
         width: 100vw;
         height: 60vh;
         padding-top: 10vh;
     }
-    h3{ 
+
+    h3 {
         margin-bottom: 37px;
     }
-    input{        
-    width: 60vw;
-    min-width: 245px;
+
+    input {
+        width: 60vw;
+        min-width: 245px;
     }
-    button{        
-    width: 60vw;
-    min-width: 245px;
+
+    button {
+        width: 60vw;
+        min-width: 245px;
     }
 }
 
-
-@media(max-width:400px){
-    #recent{
+@media(max-width:400px) {
+    #recent {
         display: flex;
         flex-direction: column;
         margin-bottom: 13px;
     }
-    input{        
-    width: 80vw;
+
+    input {
+        width: 80vw;
     }
-    button{
-    width: 80vw;
+
+    button {
+        width: 80vw;
     }
 }

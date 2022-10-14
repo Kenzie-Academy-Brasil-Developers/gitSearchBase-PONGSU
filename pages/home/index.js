@@ -7,25 +7,30 @@ let userSelected = {}
 localStorage.removeItem('userSelected')
 let recentUsers = []
 
-if (localStorage.getItem("recentUsers") != null) {
-    recentUsers = JSON.parse(localStorage.getItem("recentUsers"))
-    fillRecentUsers()
-}
-if (recentUsers.length == 0) {
-    recent.remove()
+getRecentUsers()
+trackFormBttn()
+
+function getRecentUsers() {
+    if (localStorage.getItem("recentUsers") != null) {
+        recentUsers = JSON.parse(localStorage.getItem("recentUsers"))
+        fillRecentUsers()
+    } if (recentUsers.length == 0) {
+        recent.remove()
+    }
 }
 
-bttnGet.addEventListener('click', () => {
-    bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
-    return getUser()
-})
-
-userToSearch.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+function trackFormBttn() {
+    bttnGet.addEventListener('click', () => {
         bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
         return getUser()
-    }
-});
+    })
+    userToSearch.addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
+            return getUser()
+        }
+    });
+}
 
 async function getUser() {
     await fetch(`${url}${userToSearch.value}`)

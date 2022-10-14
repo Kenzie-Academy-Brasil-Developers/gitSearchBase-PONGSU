@@ -3,31 +3,38 @@ let navBttns = document.getElementById('nav-bttns')
 let postList = document.getElementById('post-list')
 let repos = []
 
-if (localStorage.getItem("userSelected") != null) {
-    userSelected = JSON.parse(localStorage.getItem("userSelected"))
+getFromLocalStorage()
+fillUserInfos()
+getRepos()
+
+function getFromLocalStorage() {
+    if (localStorage.getItem("userSelected") != null) {
+        userSelected = JSON.parse(localStorage.getItem("userSelected"))
+    }
+    if (userSelected.email != null) {
+        navBttns.insertAdjacentHTML('afterbegin', `
+        <a id="link-email" href="${userSelected.email}"><button id="email-bttn">Email</button></a>
+        `
+        )
+    } else {
+        navBttns.insertAdjacentHTML('afterbegin', `
+        <a id="link-email" href=""><button id="email-bttn">Email</button></a>
+        `
+        )
+    }
 }
 
-if (userSelected.email != null) {
-    navBttns.insertAdjacentHTML('afterbegin', `
-    <a id="link-email" href="${userSelected.email}"><button id="email-bttn">Email</button></a>
-    `
-    )
-} else {
-    navBttns.insertAdjacentHTML('afterbegin', `
-    <a id="link-email" href=""><button id="email-bttn">Email</button></a>
-    `
-    )
+function fillUserInfos() {
+    userInfos.insertAdjacentHTML('afterbegin', `
+    <figcaption>
+        <img src="${userSelected.avatar_url}" alt="">
+    </figcaption>
+    <aside>
+        <h3 id="user-name">${userSelected.name}</h3>
+        <h6 id="Ocupation">${userSelected.bio}</h6>
+    </aside>
+    `)
 }
-
-userInfos.insertAdjacentHTML('afterbegin', `
-<figcaption>
-    <img src="${userSelected.avatar_url}" alt="">
-</figcaption>
-<aside>
-    <h3 id="user-name">${userSelected.name}</h3>
-    <h6 id="Ocupation">${userSelected.bio}</h6>
-</aside>
-`)
 
 async function getRepos() {
     await fetch(`https://api.github.com/users/${userSelected.login}/repos`)
@@ -53,5 +60,3 @@ function fillRepos() {
         `)
     })
 }
-
-getRepos()
