@@ -15,7 +15,6 @@ if (recentUsers.length == 0) {
     recent.remove()
 }
 
-
 bttnGet.addEventListener('click', () => {
     bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
     return getUser()
@@ -52,7 +51,6 @@ async function getUser() {
                 recentUsers.splice(0, 1)
                 recentUsers.push(userSelected)
             }
-
             localStorage.setItem("recentUsers", JSON.stringify(recentUsers))
             localStorage.setItem("userSelected", JSON.stringify(userSelected))
             window.location.href = "../profile/index.html";
