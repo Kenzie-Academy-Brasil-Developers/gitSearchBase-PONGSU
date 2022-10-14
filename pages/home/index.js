@@ -2,6 +2,7 @@ const url = "https://api.github.com/users/"
 const userToSearch = document.getElementById('user-input')
 const bttnGet = document.getElementById('bttn-get')
 const recentList = document.getElementById('recent-list')
+const recent = document.getElementById('recent')
 let userSelected = {}
 localStorage.removeItem('userSelected')
 let recentUsers = []
@@ -10,6 +11,10 @@ if (localStorage.getItem("recentUsers") != null) {
     recentUsers = JSON.parse(localStorage.getItem("recentUsers"))
     fillRecentUsers()
 }
+if (recentUsers.length == 0) {
+    recent.remove()
+}
+
 
 bttnGet.addEventListener('click', () => {
     bttnGet.innerHTML = '<img src="../../img/spinner.svg">'
